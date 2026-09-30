@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Restringe scripts e estilos à própria origem e bloqueia conexões de dados. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src data:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Valide e formate JSON direto no navegador. Gratuito, em português, sem cadastro e sem envio de dados.">
+  <meta name="color-scheme" content="light dark">
+  <title>Formatador e validador de JSON</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Formatador e validador de JSON</h1>
+    <p class="resumo">Cole um JSON, confira se ele é válido e receba uma versão organizada, pronta para copiar.</p>
+  </header>
+
+  <main class="bancada">
+    <section class="painel">
+      <label class="rotulo" for="entrada">Cole seu JSON aqui</label>
+      <textarea id="entrada" class="campo" rows="14" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" aria-describedby="estado-entrada"></textarea>
+      <p id="estado-entrada" class="estado" role="status" aria-live="polite"></p>
+      <div class="acoes">
+        <button type="button" id="formatar" class="botao botao--principal">Formatar</button>
+        <button type="button" id="validar" class="botao">Validar</button>
+        <button type="button" id="exemplo" class="botao">Carregar exemplo</button>
+        <button type="button" id="limpar" class="botao">Limpar</button>
+      </div>
+    </section>
+
+    <section class="painel painel--resultado">
+      <label class="rotulo" for="resultado">Resultado</label>
+      <textarea id="resultado" class="campo campo--resultado" rows="14" readonly wrap="off" spellcheck="false" autocomplete="off" aria-describedby="estado-resultado" placeholder="O JSON formatado aparece aqui."></textarea>
+      <p id="estado-resultado" class="estado" role="status" aria-live="polite"></p>
+      <div class="acoes">
+        <button type="button" id="copiar" class="botao" disabled>Copiar resultado</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Seu JSON é processado apenas neste navegador.</p>
+  </footer>
+
+  <noscript>
+    <p class="sem-script">Esta ferramenta precisa de JavaScript para funcionar. Nenhum dado sai do seu navegador.</p>
+  </noscript>
+
+  <script src="app.js"></script>
+</body>
+</html>
